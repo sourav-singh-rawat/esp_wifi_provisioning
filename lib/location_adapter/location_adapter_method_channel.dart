@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,6 +12,10 @@ class MethodChannelLocationAdapter extends LocationAdapterPlatform {
 
   @override
   Future<bool> hasLocationPermissions() async {
+    if (Platform.isIOS) {
+      return Future.value(true);
+    }
+
     try {
       final hasLocationPermissions = await methodChannel.invokeMethod<bool>('hasLocationPermissions') ?? false;
 
@@ -21,6 +27,10 @@ class MethodChannelLocationAdapter extends LocationAdapterPlatform {
 
   @override
   Future<bool> requestLocationPermission() async {
+    if (Platform.isIOS) {
+      return Future.value(true);
+    }
+
     try {
       final isAllowed = await methodChannel.invokeMethod<bool>('requestLocationPermission') ?? false;
 
@@ -32,6 +42,10 @@ class MethodChannelLocationAdapter extends LocationAdapterPlatform {
 
   @override
   Future<bool> isLocationServiceEnabled() async {
+    if (Platform.isIOS) {
+      return Future.value(true);
+    }
+
     try {
       final isLocationServiceEnabled = await methodChannel.invokeMethod<bool>('isLocationServiceEnabled') ?? false;
 
@@ -43,6 +57,10 @@ class MethodChannelLocationAdapter extends LocationAdapterPlatform {
 
   @override
   Future<bool> requestEnableLocationService() async {
+    if (Platform.isIOS) {
+      return Future.value(true);
+    }
+
     try {
       final hasLocationPermissions = await this.hasLocationPermissions();
       if (!hasLocationPermissions) {
