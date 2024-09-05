@@ -22,15 +22,6 @@ class EspLocationException extends EspException<void> {
   }
 }
 
-class EspBluetoothScanException extends EspException<void> {
-  EspBluetoothScanException(super.message);
-
-  @override
-  String toString() {
-    return message;
-  }
-}
-
 class EspBluetoothConnectionException extends EspException<void> {
   EspBluetoothConnectionException(super.message);
 

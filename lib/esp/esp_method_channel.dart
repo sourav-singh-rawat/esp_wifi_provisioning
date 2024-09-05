@@ -116,7 +116,7 @@ class MethodChannelEsp extends EspPlatform {
       case 'SCAN_ERROR':
         return EspBluetoothException(e.message!);
       case 'CONNECTION_ERROR':
-        return EspBluetoothScanException(e.message!);
+        return EspBluetoothConnectionException(e.message!);
       case 'WIFI_SCAN_ERROR':
         return EspWifiScanException(e.message!);
       case 'WIFI_CONNECTION_ERROR':
