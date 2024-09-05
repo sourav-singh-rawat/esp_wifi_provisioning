@@ -46,6 +46,10 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-    <string>“Esp Wifi Provisioner” Would Like to Use Bluetooth</string>
+    <string>This will be required to setup wifi on hardware device.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>This will be required to setup wifi on hardware device.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This will be required to setup wifi on hardware device via reading QR code.</string>
 </dict>
 </plist>
