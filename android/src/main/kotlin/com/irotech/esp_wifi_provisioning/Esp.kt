@@ -96,15 +96,15 @@ class Esp: FlutterPlugin, MethodChannel.MethodCallHandler {
             }
             "provisionWifiNetwork" -> {
                 val ssid = call.argument<String>("ssid");
-                val password = call.argument<String>("password")
+                var password = call.argument<String>("password")
 
                 if(ssid==null){
                     result.error("WIFI_CONNECTION_ERROR","Network SSID is required.",null)
                     return
                 }
+
                 if(password==null){
-                    result.error("WIFI_CONNECTION_ERROR","Network SSID is required.",null)
-                    return
+                    password = ""
                 }
 
                 provision(ssid,password,result)
